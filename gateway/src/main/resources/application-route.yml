@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: order-route
+          uri: lb://service-order
+          predicates:
+            - Path=/api/order/**
+          order: 0
+        - id: product-route
+          uri: lb://service-product
+          predicates:
+            - Path=/api/product/**
+        - id: bin-route
+          uri: https://cn.bing.com/
+          predicates:
+            - Path=/**

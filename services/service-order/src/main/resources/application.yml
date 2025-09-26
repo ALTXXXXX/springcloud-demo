@@ -1,0 +1,37 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: service-order
+  cloud:
+    nacos:
+      server-addr: 172.25.64.252:8848
+      config:
+        namespace: dev
+    openfeign:
+      client:
+        config:
+          default:
+            logger-level: full
+            connect-timeout: 1000
+            read-timeout: 2000
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      eager: true
+      web-context-unify: false
+  config:
+    import:
+      - nacos:common.properties?group=order
+      - nacos:database.properties?group=order
+feign:
+  sentinel:
+    enabled: true
+
+#---
+#spring:
+#  config:
+#    import:
+#      - nacos:common.properties?group=order
+#      - nacos:database.properties?group=order
+
