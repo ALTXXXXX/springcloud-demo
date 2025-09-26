@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
-@RequestMapping("/api/product")
+//@RequestMapping("/api/product")
 public class ProductController {
 
 

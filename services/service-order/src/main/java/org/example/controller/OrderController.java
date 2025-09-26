@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 //@RefreshScope
 @RestController
-@RequestMapping("/api/order")
+//@RequestMapping("/api/order")
 @Slf4j
 public class OrderController {
 
